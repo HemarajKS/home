@@ -34,9 +34,9 @@ const SignUp = () => {
       });
 
       if (mappedUser.includes('user')) {
-        alert('true');
+        alert('user already exist');
       } else if (mappedUser.includes('no user')) {
-        alert('not true');
+        previousData.push(userData);
       }
 
       console.log('pre', previousData);
