@@ -1,11 +1,12 @@
 import '../../components/Login/login.css';
 import '../../components/signUp/signUp.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   type usersType = { mobileNo: number; mPin: number };
   const [togglePass, setTogglePass] = useState(false);
-
+  const navigate = useNavigate();
   const togglePassword = () => {
     setTogglePass(!togglePass);
   };
@@ -37,11 +38,12 @@ const SignUp = () => {
         alert('user already exist');
       } else if (mappedUser.includes('no user')) {
         previousData.push(userData);
+        navigate('/landing/login');
       }
 
       console.log('pre', previousData);
       localStorage.setItem('users', JSON.stringify(previousData));
-    } else {
+    } else if ((previousData.length = 0 && mobileNo)) {
       localStorage.setItem(
         'users',
         JSON.stringify([
