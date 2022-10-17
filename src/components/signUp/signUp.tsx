@@ -1,6 +1,6 @@
 import '../../components/Login/login.css';
 import '../../components/signUp/signUp.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const SignUp = () => {
   type usersType = { mobileNo: number; mPin: number };
@@ -25,21 +25,29 @@ const SignUp = () => {
 
     console.log('userData', previousData);
 
-    if (previousData.length > 0 && userData.mobileNo) {
-      for (let i = 0; i < previousData.length; i++) {
-        if (previousData[i].mobileNo === userData.mobileNo) {
-          break;
-        } else {
-          console.log(previousData[i].mobileNo, mobileNo);
-          previousData.push(userData);
-          break;
+    if (previousData.length > 0 && mobileNo) {
+      const mappedUser = previousData.map((user) => {
+        if (user.mobileNo === mobileNo) {
+          return 'user';
         }
+        return 'no user';
+      });
+
+      if (mappedUser.includes('user')) {
+        alert('true');
+      } else if (mappedUser.includes('no user')) {
+        alert('not true');
       }
+
+      console.log('pre', previousData);
       localStorage.setItem('users', JSON.stringify(previousData));
     } else {
       localStorage.setItem(
         'users',
-        JSON.stringify([{ mobileNo: '9945810342', mPin: '9945' }])
+        JSON.stringify([
+          { mobileNo: '9945810342', mPin: '9945' },
+          { mobileNo: '9945810341', mPin: '9945' },
+        ])
       );
     }
   };
