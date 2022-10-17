@@ -1,0 +1,41 @@
+.login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fontClr);
+}
+
+.loginContainer {
+    background-image: var(--background);
+    display: flex;
+    border-radius: 1em;
+}
+
+.loginLogoContainer {
+    flex-basis: 38%;
+}
+
+.loginLogoContainer {
+    padding: 94px 20px;
+    border-right: 1px solid var(--borderClr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.loginLogoBody {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.loginForm {
+    flex-basis: 62%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
