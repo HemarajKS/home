@@ -34,11 +34,15 @@ const SignUp = () => {
         return 'no user';
       });
 
-      if (mappedUser.includes('user')) {
-        alert('user already exist');
-      } else if (mappedUser.includes('no user')) {
-        previousData.push(userData);
-        navigate('/landing/login');
+      if (newMPin === confirmMpin) {
+        if (mappedUser.includes('user')) {
+          alert('user already exist');
+        } else if (mappedUser.includes('no user')) {
+          previousData.push(userData);
+          navigate('/landing/login');
+        }
+      } else {
+        alert('mPin does not match');
       }
 
       console.log('pre', previousData);

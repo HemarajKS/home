@@ -41,7 +41,7 @@ const Login = () => {
       <div className="signUpLink">
         <div>
           {' '}
-          Don’t have a Account? <Link to="/signUp"> SIGNUP</Link>
+          Don’t have a Account? <Link to="/landing/signUp"> SIGNUP</Link>
         </div>
       </div>
     </div>

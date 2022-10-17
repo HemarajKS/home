@@ -2,11 +2,13 @@ import Login from '../../components/Login/login';
 import SignUp from '../../components/signUp/signUp';
 import './landingPage.css';
 import { Routes, Route } from 'react-router-dom';
+import SnackBar from '../../components/snackBar/snackBar';
 
 const LandingPage = (child: any) => {
   console.log('child', child);
   return (
     <div className="login">
+      <SnackBar />
       <div className="loginContainer">
         <div className="loginLogoContainer">
           <div className="loginLogo">

@@ -1,28 +1,31 @@
 @font-face {
-    font-family: 'Open Sans';
-    src: url('./assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Open Sans';
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Open Sans';
 }
 
 body {
-    min-height: 100vh;
-    background-color: #f5f7fb;
+  min-height: 100vh;
+  background-color: #f5f7fb;
 }
 
 :root {
-    --background: linear-gradient(180deg, #20bbff 0%, #0e85ff 100%);
-    --borderClr: #f5f7fb4f;
-    --fontClr: #ffffff;
-    --placeHolderTextClr: #787e8c;
-    --blueClr: #0e85ff;
+  --background: linear-gradient(180deg, #20bbff 0%, #0e85ff 100%);
+  --borderClr: #f5f7fb4f;
+  --fontClr: #ffffff;
+  --placeHolderTextClr: #787e8c;
+  --blueClr: #0e85ff;
+  --successGreen: #cbf3dc;
+  --successGreenBorder: #97e6b8;
+  --successGreenFont: #2ecc71;
 }
 
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
-    display: none;
+  display: none;
 }
