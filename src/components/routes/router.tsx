@@ -3,19 +3,32 @@ import Home from '../../views/home/home';
 import LandingPage from '../../views/landingPage/landingPage';
 import Login from '../Login/login';
 import SignUp from '../signUp/signUp';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Router = () => {
-  const [auth, setAuth] = useState(false);
+  const [authValue, setAuthValue] = useState<string | null>('');
 
   // if (localStorage.getItem('auth') === 'authenticated') {
   //   setAuth(true);
   // }
+
+  useEffect(() => {
+    setAuthValue(localStorage.getItem('auth'));
+  }, []);
+
+  console.log(authValue);
+
   const protectedRouting = (path: string, component: JSX.Element) => {
     return (
       <Route
         path={path}
-        element={auth && auth ? component : <LandingPage props={<Login />} />}
+        element={
+          authValue !== '' && authValue === 'authenticated' ? (
+            component
+          ) : (
+            <LandingPage props={<Login />} />
+          )
+        }
       />
     );
   };
