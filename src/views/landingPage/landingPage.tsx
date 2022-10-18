@@ -3,12 +3,28 @@ import SignUp from '../../components/signUp/signUp';
 import './landingPage.css';
 import { Routes, Route } from 'react-router-dom';
 import SnackBar from '../../components/snackBar/snackBar';
+import { useEffect, useState } from 'react';
 
 const LandingPage = (child: any) => {
-  console.log('child', child);
+  const [displaySnackBar, setDisplaySnackBar] = useState(false);
+
+  useEffect(() => {
+    setDisplaySnackBar(Boolean(sessionStorage.getItem('signUpSuccess')));
+    sessionStorage.removeItem('signUpSuccess');
+  }, []);
+
+  setInterval(() => {
+    setDisplaySnackBar(false);
+  }, 2000);
+
   return (
     <div className="login">
-      <SnackBar />
+      {displaySnackBar ? (
+        <SnackBar message="Congrats!!! Success, Signin to access the vault" />
+      ) : (
+        ''
+      )}
+
       <div className="loginContainer">
         <div className="loginLogoContainer">
           <div className="loginLogo">
@@ -26,7 +42,7 @@ const LandingPage = (child: any) => {
             <Route path="/login" element={<Login />} />
             <Route path="/signUp" element={<SignUp />} />
           </Routes>
-          {child !== '{}' ? child.props : 'hi'}
+          {child !== '{}' ? child.props : ''}
         </div>
       </div>
     </div>

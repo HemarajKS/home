@@ -2,7 +2,7 @@ import './login.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-const Login = () => {
+const Login = ({ loginToLanding }: any) => {
   const [togglePass, setTogglePass] = useState(false);
 
   const togglePassword = () => {

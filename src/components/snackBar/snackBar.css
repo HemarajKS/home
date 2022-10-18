@@ -1,6 +1,6 @@
 .snackBar {
   position: absolute;
-  top: 80px;
+  top: 3.5em;
   background-color: var(--successGreen);
   border: 1px solid var(--successGreenBorder);
   z-index: 1;

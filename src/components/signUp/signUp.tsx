@@ -39,7 +39,9 @@ const SignUp = () => {
           alert('user already exist');
         } else if (mappedUser.includes('no user')) {
           previousData.push(userData);
+          sessionStorage.setItem('signUpSuccess', 'true');
           navigate('/landing/login');
+          window.location.reload();
         }
       } else {
         alert('mPin does not match');
