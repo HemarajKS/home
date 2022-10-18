@@ -3,9 +3,14 @@ import Home from '../../views/home/home';
 import LandingPage from '../../views/landingPage/landingPage';
 import Login from '../Login/login';
 import SignUp from '../signUp/signUp';
+import { useState } from 'react';
 
 const Router = () => {
-  let auth = true;
+  const [auth, setAuth] = useState(false);
+
+  // if (localStorage.getItem('auth') === 'authenticated') {
+  //   setAuth(true);
+  // }
   const protectedRouting = (path: string, component: JSX.Element) => {
     return (
       <Route
